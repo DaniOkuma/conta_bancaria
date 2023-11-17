@@ -2,6 +2,7 @@ package conta_bancaria;
 
 import java.util.Scanner;
 
+import conta_bancaria.model.Conta;
 import conta_bancaria.util.Cores;
 
 public class Menu {
@@ -11,6 +12,22 @@ public class Menu {
 		
 		int opcao;
 				
+		//Criar objetos da classe Conta para testes
+		
+		Conta c1 = new Conta(1, 123, 1, "Victoria Moraes", 100000.00f);
+		c1.visualizar();
+		System.out.println("Exibir o Saldo: " + c1.getSaldo());
+		c1.setSaldo(200000.00f);
+		c1.visualizar();
+		c1.sacar(1000.00f);
+		c1.visualizar();
+		c1.depositar(5000.00f);
+		c1.visualizar();
+		
+		Conta c2 = new Conta(2, 123, 1, "Vitor Nascimento", 300000.00f);
+		c2.visualizar();
+		
+		
 		while(true) {
 
 			System.out.println(Cores.TEXT_PURPLE_BRIGHT + Cores.ANSI_BLACK_BACKGROUND
@@ -87,7 +104,7 @@ public class Menu {
 	System.out.println("\n*********************************************************");
 	System.out.println("Projeto Desenvolvido por: ");
 	System.out.println("Danielle Okuma");
-	System.out.println("github.com/DaniOkuman");
+	System.out.println("github.com/DaniOkuma");
 	System.out.println("*********************************************************");
    }
 
