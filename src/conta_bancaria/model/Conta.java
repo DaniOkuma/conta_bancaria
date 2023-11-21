@@ -10,7 +10,7 @@ public class Conta {
 	private String titular;
 	private float saldo;
 	
-	//Criamos o método Construtor
+	//Método Construtor
 	public Conta(int numero, int agencia, int tipo, String titular, float saldo) {
 		this.numero = numero;
 		this.agencia = agencia;
@@ -19,6 +19,7 @@ public class Conta {
 		this.saldo = saldo;
 		
 	}
+	
    //Método get e set
 	public int getNumero() {
 		return numero;
@@ -61,6 +62,7 @@ public class Conta {
 	}
 	
 	public boolean sacar(float valor) {
+		
 		if (this.getSaldo() < valor) {
 			System.out.println("\nSaldo Insuficiente");
 			return false;
