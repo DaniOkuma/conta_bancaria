@@ -47,7 +47,8 @@ public class Menu {
 			System.out.println("            6 - Sacar                                ");
 			System.out.println("            7 - Depositar                            ");
 			System.out.println("            8 - Transferir valores entre Contas      ");
-			System.out.println("            9 - Sair                                 ");
+			System.out.println("            9 - Consulta por Titular                 ");
+			System.out.println("            10 - Sair                                ");
 			System.out.println("                                                     ");
 			System.out.println("*****************************************************");
 			System.out.println("Entre com a opção desejada:                          ");
@@ -61,7 +62,7 @@ public class Menu {
 				opcao = 0;
 			}
 			
-			if (opcao == 9) {
+			if (opcao == 10) {
 				System.out.println(Cores.TEXT_WHITE_BOLD + "\nBanco do Brazil com Z - O seu Futuro começa aqui!");
 				sobre();
 				leia.close();
@@ -229,6 +230,19 @@ public class Menu {
 					keyPress();
 					
                     		break;
+                    		
+				case 9: 
+					System.out.println(Cores.TEXT_WHITE + "Consultar Contas por Titular\n\n");
+					
+					System.out.println("Digite o nome do titular: ");
+					leia.skip("\\R");
+					titular = leia.nextLine();
+					
+					contas.procurarPorNome(titular);
+					
+					keyPress();
+					
+					break;
 				default:
 					System.out.println(Cores.TEXT_RED_BOLD + "\nOpção Inválida!\n" + Cores.TEXT_RESET);
 					keyPress();
